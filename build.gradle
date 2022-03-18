@@ -1,6 +1,6 @@
 plugins {
     id 'java-library'
-    //id "io.qameta.allure" version "2.9.6"
+    id "io.qameta.allure" version "2.9.6"
 }
 
 repositories {
@@ -8,10 +8,10 @@ repositories {
 }
 //для добавления логирования в терминале
 //gradle test - команда запуска
-def junitVersion = "5.8.2"
-    //allureVersion = "2.17.2"
+def junitVersion = "5.8.2",
+    allureVersion = "2.17.2"
 
-/*allure {
+allure {
     report {
         version.set(allureVersion)
     }
@@ -25,17 +25,17 @@ def junitVersion = "5.8.2"
             }
         }
     }
-}*/
+}
 
 dependencies {
     testImplementation(
-            'com.codeborne:selenide:6.2.1',
-            "org.junit.jupiter:junit-jupiter-api:$junitVersion"
-   //         'io.qameta.allure:allure-selenide:$allureVersion'
+            "com.codeborne:selenide:6.2.1",
+            "org.junit.jupiter:junit-jupiter-api:$junitVersion",
+            "io.qameta.allure:allure-selenide:$allureVersion"
     )
     testRuntimeOnly(
-            //'org.slf4j:slf4j-simple:1.7.29',
-            'org.junit.jupiter:junit-jupiter-engine:$junitVersion')
+            "org.slf4j:slf4j-simple:1.7.29",
+            "org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
 
 //добавляет логирование в терминале
