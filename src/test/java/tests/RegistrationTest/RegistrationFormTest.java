@@ -1,8 +1,9 @@
-package tests.Registration;
+package tests.RegistrationTest;
 //д.з. 1
         import com.codeborne.selenide.Configuration;
         import org.junit.jupiter.api.BeforeAll;
         import org.junit.jupiter.api.Test;
+        import org.openqa.selenium.remote.DesiredCapabilities;
 
         import static com.codeborne.selenide.Condition.text;
         import static com.codeborne.selenide.Selectors.byText;
@@ -14,6 +15,15 @@ public class RegistrationFormTest {
     static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
+
+        //дженкинс подключается удаленно к хрому, сначала пишем логин/пароль, потом название сайта selenoid.autotests.cloud
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+
+        //специальная функция, чтобы был доступен просмотр и видео
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+        Configuration.browserCapabilities = capabilities;
     }
 
     @Test
