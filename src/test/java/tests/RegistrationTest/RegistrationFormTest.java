@@ -42,7 +42,7 @@ public class RegistrationFormTest {
         $("[aria-label$='July 30th, 2008']").click();
         $("#subjectsInput").setValue("888"); //исчезает(?)
         $(byText("Sports")).click();
-        $("#uploadPicture").uploadFromClasspath("img/1.jpg");
+        //$("#uploadPicture").uploadFromClasspath("img/1.jpg");
         $("#currentAddress").setValue("999999");
         $(byText("Select State")).click();
         $(byText("NCR")).click();
@@ -63,8 +63,8 @@ public class RegistrationFormTest {
                 .parent().shouldHave(text("30 July,2008"));
         $(".table-responsive").$(byText("Hobbies"))
                 .parent().shouldHave(text("Sports"));
-        $(".table-responsive").$(byText("Picture"))
-                .parent().shouldHave(text("1.jpg"));
+        /*$(".table-responsive").$(byText("Picture"))
+                .parent().shouldHave(text("1.jpg"));*/
         $(".table-responsive").$(byText("Address"))
                 .parent().shouldHave(text("999999"));
         $(".table-responsive").$(byText("State and City"))
