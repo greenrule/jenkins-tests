@@ -6,16 +6,14 @@ plugins {
 repositories {
     mavenCentral()
 }
-//для добавления логирования в терминале
-//gradle test - команда запуска
-def junitVersion = "5.8.2",
-    allureVersion = "2.17.2"
+
+def allureVersion = "2.17.2",
+    junitVersion = "5.8.2"
 
 allure {
     report {
         version.set(allureVersion)
     }
-
     adapter {
         autoconfigure.set(true)
         aspectjWeaver.set(true)
@@ -30,21 +28,19 @@ allure {
 dependencies {
     testImplementation(
             "com.codeborne:selenide:6.2.1",
-            "org.junit.jupiter:junit-jupiter-api:$junitVersion",
-            "io.qameta.allure:allure-selenide:$allureVersion"
-    )
+            "io.qameta.allure:allure-selenide:$allureVersion",
+            "org.junit.jupiter:junit-jupiter-api:$junitVersion")
     testRuntimeOnly(
             "org.slf4j:slf4j-simple:1.7.29",
             "org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
 
-//добавляет логирование в терминале
 tasks.withType(Test) {
     useJUnitPlatform()
 
     testLogging {
         lifecycle {
-//          events "started", "failed"
+//            events "started", "failed"
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
