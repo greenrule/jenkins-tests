@@ -32,7 +32,7 @@ public class RegistrationFormTest {
         Configuration.browserCapabilities = capabilities;
     }
     @AfterAll
-    static void afterAll {
+    static void afterAll() {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
