@@ -5,14 +5,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@Tag("positives test")
+@Tag("positives")
 public class PositiveTests {
-    //123
     @Test
     void test0() {
         assertTrue(true);
     }
-
     @Test
     void test1() {
         assertTrue(true);

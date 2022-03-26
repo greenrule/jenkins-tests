@@ -62,6 +62,6 @@ task registration_test(type: Test) {
 
 task positives_test(type: Test) {
     useJUnitPlatform{
-        includeTags "positives test"
+        includeTags "positives"
     }
 }
