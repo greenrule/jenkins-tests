@@ -1,7 +1,7 @@
 package tests.RegistrationTest;
 /* д.з.11
 запуск из терминала gradle clean test -Dlogin=user1 -Dpassword=1234 - запускаются все тесты
-gradle clean registration_test -Dlogin=user1 -Dpassword=1234 */
+gradle clean registration_test -Dlogin=user1 -Dpassword=1234 -Durl="selenoid.autotests.cloud/wd/hub"*/
 import com.codeborne.selenide.Configuration;
 import helpers.Attach;
 import org.junit.jupiter.api.*;
