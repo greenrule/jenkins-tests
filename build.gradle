@@ -35,7 +35,13 @@ dependencies {
             "org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
 
+//добавляет логирование + работу с getProperties
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
 tasks.withType(Test) {
+    systemProperties(System.getProperties())
     useJUnitPlatform()
 
     testLogging {
@@ -44,5 +50,18 @@ tasks.withType(Test) {
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
+    }
+}
+
+//добавляет настройку для запуска отдельных тестов по тегу
+task registration_test(type: Test) {
+    useJUnitPlatform{
+        includeTags "registration"
+    }
+}
+
+task positives_test(type: Test) {
+    useJUnitPlatform{
+        includeTags "positives test"
     }
 }
