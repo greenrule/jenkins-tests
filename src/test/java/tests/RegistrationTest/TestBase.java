@@ -20,8 +20,8 @@ public class TestBase {
         String password = System.getProperty("password", "123");
 
         //дженкинс подключается удаленно к хрому, сначала пишем логин/пароль, потом название сайта selenoid.autotests.cloud
-        Configuration.remote = "https://" + login + ":" + password + "@" + "selenoid.autotests.cloud/wd/hub";
-        //+ System.getProperty("remoteBrowser");
+        Configuration.remote = "https://" + login + ":" + password + "@" + System.getProperty("remoteBrowser");
+        //"selenoid.autotests.cloud/wd/hub"
 
 
         //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
