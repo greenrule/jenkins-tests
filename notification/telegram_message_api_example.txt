@@ -1,0 +1,15 @@
+API для получения id чата https://api.telegram.org/bot5158029175:AAH1DoBFOu6lStaFMBIIc7fu4S71sGSVUXg/getUpdates
+id чата -1001552351022
+токен бота 5158029175:AAH1DoBFOu6lStaFMBIIc7fu4S71sGSVUXg
+test_for_hw12
+test_for_hw12_bot
+
+// Command in many lines (\ as separator)
+
+curl -X POST \
+-H 'Content-Type: application/json' \
+-d '{"chat_id": "-1001552351022", "text": "This is a test from ME"}' \
+https://api.telegram.org/bot5158029175:AAH1DoBFOu6lStaFMBIIc7fu4S71sGSVUXg/sendMessage
+
+// Command in one line
+curl -X POST -H 'Content-Type: application/json' -d '{"chat_id": "-1001552351022", "text": "This is a test from ME"}' https://api.telegram.org/bot5158029175:AAH1DoBFOu6lStaFMBIIc7fu4S71sGSVUXg/sendMessage
